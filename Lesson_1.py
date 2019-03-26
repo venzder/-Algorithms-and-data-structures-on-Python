@@ -36,25 +36,29 @@
 # Для каждого из трех случаев пользователь задает свои границы диапазона. Например, если надо получить случайный символ
 # от 'a' до 'f', то вводятся эти символы. Программа должна вывести на экран любой символ алфавита от 'a' до 'f' включительно.
 
-import random
-
-x = input("Введите символ нижней границы диапазона: ")
-y = input("Введите символ верхней границы диапазона: ")
-if x.isdigit() and y.isdigit():
-    digits_list = [int(i) for i in range(int(x), int(y) + 1)]
-    letter = random.choice(digits_list)
-    print(letter)
-elif x.isalpha() and y.isalpha():
-    digits_list = [chr(i) for i in range(ord(x), ord(y) + 1)]
-    letter = random.choice(digits_list)
-    print(letter)
-else:
-    print("Границы диапазона должны быть либо числами, либо буквами")
-
-
-
+# import random
+#
+# x = input("Введите символ нижней границы диапазона: ")
+# y = input("Введите символ верхней границы диапазона: ")
+# if x.isdigit() and y.isdigit():
+#     digits_list = [int(i) for i in range(int(x), int(y) + 1)]
+#     letter = random.choice(digits_list)
+#     print(letter)
+# elif x.isalpha() and y.isalpha():
+#     digits_list = [chr(i) for i in range(ord(x), ord(y) + 1)]
+#     letter = random.choice(digits_list)
+#     print(letter)
+# else:
+#     print("Границы диапазона должны быть либо числами, либо буквами")
 
 # 5. Пользователь вводит две буквы. Определить, на каких местах алфавита они стоят и сколько между ними находится букв.
+
+x = input("Введите первую букву: ")
+y = input("Введите вторую букву: ")
+nx = ord(x) - 96
+ny = ord(y) - 96
+interval = abs(nx - ny)
+print(f'Позиция первой буквы - {nx}, позиция второй буквы - {ny}, расстояние - {interval} букв')
 
 # 6. Пользователь вводит номер буквы в алфавите. Определить, какая это буква.
 # 7. По длинам трех отрезков, введенных пользователем, определить возможность существования треугольника, составленного
