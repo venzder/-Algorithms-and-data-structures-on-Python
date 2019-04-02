@@ -40,29 +40,37 @@
 
 # 4. Определить, какое число в массиве встречается чаще всего.
 
-import random
-
-x = [random.randint(1, 10) for i in range(100)]
-counts = []
-for i in x:
-    count = 0
-    for j in x:
-        if i == j:
-            count += 1
-    counts.append((i, count))
-counts = set(counts)
-count_max = []
-for i in counts:
-    count_max.append(i[1])
-maxim = max(count_max)
-if maxim <= 1:
-    print('Все значения уникальны')
-else:
-    for i in counts:
-        if i[1] == maxim:
-            print(f'Число {i[0]} встречается максимальные {i[1]} раз')
+# import random
+#
+# x = [random.randint(1, 10) for i in range(100)]
+# counts = []
+# for i in x:
+#     count = 0
+#     for j in x:
+#         if i == j:
+#             count += 1
+#     counts.append((i, count))
+# counts = set(counts)
+# count_max = []
+# for i in counts:
+#     count_max.append(i[1])
+# maxim = max(count_max)
+# if maxim <= 1:
+#     print('Все значения уникальны')
+# else:
+#     for i in counts:
+#         if i[1] == maxim:
+#             print(f'Число {i[0]} встречается максимальные {i[1]} раз')
 
 # 5. В массиве найти максимальный отрицательный элемент. Вывести на экран его значение и позицию (индекс) в массиве.
+
+import random
+
+x = [random.randint(-100, 100) for i in range(100)]
+minim = min(x)
+index = x.index(minim)
+print(f'Минимальное число {minim} с индексом {index}')
+
 # 6. В одномерном массиве найти сумму элементов, находящихся между минимальным и максимальным элементами. Сами
 # минимальный и максимальный элементы в сумму не включать.
 # 7. В одномерном массиве целых чисел определить два наименьших элемента. Они могут быть как равны между собой (оба
