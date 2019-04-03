@@ -74,26 +74,35 @@
 # 6. В одномерном массиве найти сумму элементов, находящихся между минимальным и максимальным элементами. Сами
 # минимальный и максимальный элементы в сумму не включать.
 
-import random
-
-x = [random.randint(1, 100) for i in range(50)]
-sum_list = []
-x_max = max(x)
-x_min = min(x)
-idx_min = x.index(x_min)
-idx_max = x.index(x_max)
-for idx, itm in enumerate(x):
-    if idx_min < idx_max:
-        if idx_max > idx > idx_min:
-            sum_list.append(itm)
-    elif idx_min > idx_max:
-        if idx_max < idx < idx_min:
-            sum_list.append(itm)
-summa = sum(sum_list)
-print(summa)
+# import random
+#
+# x = [random.randint(1, 100) for i in range(50)]
+# sum_list = []
+# x_max = max(x)
+# x_min = min(x)
+# idx_min = x.index(x_min)
+# idx_max = x.index(x_max)
+# for idx, itm in enumerate(x):
+#     if idx_min < idx_max:
+#         if idx_max > idx > idx_min:
+#             sum_list.append(itm)
+#     elif idx_min > idx_max:
+#         if idx_max < idx < idx_min:
+#             sum_list.append(itm)
+# summa = sum(sum_list)
+# print(summa)
 
 # 7. В одномерном массиве целых чисел определить два наименьших элемента. Они могут быть как равны между собой (оба
 # являться минимальными), так и различаться.
+
+import random
+
+x = [random.randint(1, 100) for i in range(50)]
+min1 = min(x)
+x.remove(min1)
+min2 = min(x)
+print(min1, min2)
+
 # 8. Матрица 5x4 заполняется вводом с клавиатуры кроме последних элементов строк. Программа должна вычислять сумму
 # введенных элементов каждой строки и записывать ее в последнюю ячейку строки. В конце следует вывести полученную матрицу.
 # 9. Найти максимальный элемент среди минимальных элементов столбцов матрицы.
